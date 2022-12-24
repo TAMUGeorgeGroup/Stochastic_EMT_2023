@@ -49,7 +49,7 @@ for(i in TGFBeta.cases){
 
 
 ####Functions
-#' Title
+#' Populate directory with mean values
 #'
 #' @param mean.val.dirthe prefix to the mean value dir
 #' @param data.input the data input info should be like:
@@ -103,7 +103,7 @@ populate.dtw.files <- function(mean.val.dir, data.input, input.dir, cutoff.range
   }
 }
 
-#' Title
+#' Calculate DTW distance matrix
 #'
 #' @param mean.val.dir prefix to the mean value dir 
 #' @param data.input the data input info should be like: 
