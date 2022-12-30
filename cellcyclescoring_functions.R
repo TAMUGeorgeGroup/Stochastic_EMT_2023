@@ -16,7 +16,7 @@ preprocess_data<-function(data, gene.names){
   data$V1 <- NULL
   t(data)->data #Transpose data
   colnames(data)<- gene.names
-  rownames(data)<-as.character(seq(1, length(rownames(data))))#Change rownames to numbers so we can feed to MAGIC
+  rownames(data)<-as.character(seq(1, length(rownames(data)))) 
   
   #Filter cells having at least 10 expressed genes
   keep_cols <- colSums(data > 0) > 10 
