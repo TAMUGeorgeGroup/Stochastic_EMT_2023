@@ -29,6 +29,9 @@ library(msigdbr)
 library(edgeR)
 library(readxl)
 library(Seurat)
+
+source("/Users/annicenajafi/Downloads/context_processing.R")
+
 #Read list of EMT markers from the cancer research paper
 read.csv("/Users/annicenajafi/Downloads/EMTGeneListForAnnice.csv")->>EMT.genes
 EMT.genes$name->>EMT.genes
