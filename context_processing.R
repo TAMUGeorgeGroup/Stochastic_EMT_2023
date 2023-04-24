@@ -315,13 +315,14 @@ fig1e<-  plot_ly(z=my.mat, type="heatmap",colors = c(color.scheme[1], color.sche
   #     x_cluster<-x_cluster.comp
   #   }
   # }
+  #uncomment only if interested in heatmaps for ks scores
   fig_1 <- plot_ly(x=x_cluster$Comp.1, y=x_cluster$Comp.2, z=x_cluster$ks.scores, type="scatter3d", mode="markers",
           color=~ x_cluster$meta.data.Time, colors=color.scheme)%>% layout(title = bquote(.(data.input$CellLine)~ - TGF ~beta),
                                                                            xaxis = list(title = 'UMAP I',zeroline = TRUE),yaxis = list(title = 'UMAP II'))
   
   fig_2 <- plot_ly(x=x_cluster$meta.data.Time, y=x_cluster$ks.scores, colorscale = list(c(0, 0.5, 1), c(color.scheme[1], color.scheme[6], color.scheme[8]))) %>%
     add_trace(type='histogram2dcontour')%>% layout(title = bquote(.(data.input$CellLine)~ - TGF ~beta),
-                                                   xaxis = list(title = 'Body Weight (kg)',zeroline = TRUE),yaxis = list(title = 'Brain Weight (g)'))
+                                                   xaxis = list(title = '',zeroline = TRUE),yaxis = list(title = ''))
     subplot(fig_1, fig_2)
     subplot(
     plot_ly(x = as.numeric(x_cluster$meta.data.Time), color = I("black"), type = 'histogram'), 
